@@ -1,4 +1,24 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<h1>Aula 11</h1>
+
+<h2>Identificação</h2>
+<p><strong>Nome: </strong>Gustavo Costa Arakaki</p>
+<p><strong>RA: </strong>0050832011011</p>
+
+<h2>Tabela de atualização da taxa de bitcoin</h2>
+
+<table>
+  <tr>
+    <th>Data</th>
+    <th>USD</th>
+    <th>BRL</th>
+  </tr>
+
+  <tr *ngFor="let f of this.moedaService.list">
+    <td>{{ f.time.updated }}</td>
+    <td>{{ f.bpi.USD.rate_float }}</td>
+    <td>{{ f.bpi.BRL.rate_float }}</td>
+  </tr>
+</table>
+
+<h2>Tempo de UPDATE</h2>
+{{ this.moedaService.timeUpdate() }}
